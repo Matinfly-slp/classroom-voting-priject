@@ -1,14 +1,14 @@
 # Classroom Voting
 
-A Python/Tkinter classroom voting and assessment system for a local wired LAN.
+A Python/Tkinter classroom voting and assessment system designed for a local wired LAN.
 
-## Current package: V5.1
+## Project status
 
-The current source package is provided in `releases/V5.1/ClassroomVoting_Final_v5_1.zip`.
+This repository currently contains the project overview and a documented development timeline. The V5.1 source archive was inspected, but its Python files have **not yet been committed** here. Historical source snapshots for earlier versions are also not all recoverable.
 
-### Features documented for V5.1
+## Planned V5.1 feature set (based on the supplied package README)
 - Teacher dashboard and student client
-- Teacher discovery over UDP with configured-IP fallback
+- UDP teacher discovery with configured-IP fallback
 - TCP communication and automatic reconnection
 - Student computer identification as PC-01 through PC-16
 - English/Persian interface
@@ -18,22 +18,16 @@ The current source package is provided in `releases/V5.1/ClassroomVoting_Final_v
 - Timed exam mode with a teacher-controlled timer and answer key
 - Aggregate student results
 
-### Network defaults
+## Network defaults
 - TCP: 5000
 - UDP discovery: 5001
 - Maximum student computers: 16
 
-The teacher computer and student computers must be on the same local network. Configure Windows Firewall to allow the required TCP and UDP traffic. The student PCs do not need internet access for LAN communication.
+The teacher and student computers must be on the same local network. Configure Windows Firewall to allow the required TCP and UDP traffic.
 
-### Configuration
-Edit `config.json` on the relevant computers when needed. The package's teacher IP fallback is intentionally left blank; normally the student client should discover the teacher automatically. If discovery is blocked, enter the teacher computer's LAN IPv4 address in the configuration file.
+## Development history
 
-### Running from source
-Requires Python 3 and Tkinter. Start `teacher_server.py` on the teacher computer and `student_client.py` on each student computer. For classroom deployment, build Windows executables with PyInstaller on a compatible Windows machine. See the package README for the original build notes.
+See [history/DEVELOPMENT_HISTORY.md](history/DEVELOPMENT_HISTORY.md) for the version timeline and the distinction between recoverable source snapshots and milestones documented from prior discussions.
 
-### Important
-This repository documents development history, but the historical milestones are not all preserved as complete source snapshots. Only versions with recoverable original files are labelled as source snapshots. The project has not been independently tested on every classroom network configuration; test on the target LAN before classroom use.
-
-## Repository layout
-- `releases/V5.1/` — current V5.1 package
-- `history/DEVELOPMENT_HISTORY.md` — development milestones and source availability
+## Important
+This project has not been independently tested on every classroom network configuration. Test on the target LAN before classroom use.
