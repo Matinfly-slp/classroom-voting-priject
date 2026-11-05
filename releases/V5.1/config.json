@@ -1,0 +1,7 @@
+{
+  "teacher_ip": "",
+  "tcp_port": 5000,
+  "discovery_port": 5001,
+  "max_students": 16,
+  "reconnect_seconds": 2
+}
