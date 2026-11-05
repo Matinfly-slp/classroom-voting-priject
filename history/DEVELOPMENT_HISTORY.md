@@ -1,50 +1,39 @@
 # Development history
 
-This timeline records the project evolution based on the available conversation records and source files. It deliberately distinguishes original source snapshots from milestones that are documented but whose complete files are not currently available.
+This timeline is based on prior project discussions and files that could be recovered. It distinguishes actual source snapshots from milestones that are only documented. No missing source code is fabricated.
 
 ## Initial prototype — 4 October 2026
-**Status: milestone documented; no complete source snapshot recovered.**
+**Status: milestone discussed; complete matching source snapshot not recovered.**
 
-The first prototype established the teacher/server and student/client structure for classroom voting over a local network. The initial design used TCP communication and planned support for a teacher PC plus up to 16 student PCs.
+The project began as a teacher/server and student/client classroom voting system over a local wired network.
 
-## V2 — 4 October 2026
-**Status: historical code snapshot partially recovered.**
+## V2-era implementation — 4 October 2026
+**Status: partial historical code recovered; not a complete runnable release.**
 
-The V2 design included:
+The recovered code document shows:
 - Automatic student computer IDs derived from the last IPv4 octet (PC-01 to PC-16)
 - English/Persian interface
 - Anonymous and named voting modes
-- No live result totals; show final results after the teacher ends voting
+- Results shown after the teacher ends voting, rather than live totals
 - Duplicate-vote prevention
 - JSON messages over the LAN
 
-A historical code document was found, but the complete matching set of teacher and student files could not be verified. It is therefore not represented as a complete runnable release.
+Only a partial code document is available, not a verified complete matching set of teacher and student files.
 
-## V4 — 17 October 2026
-**Status: release package reported in conversation; original ZIP not currently available in this upload.**
+## Later V4/V5 development
+**Status: features discussed across later iterations; exact version-to-feature mapping needs original archives.**
 
-The V4 package was described as including:
-- Teacher and student applications plus configuration and README
-- Revoting
-- Aggregate student final results
-- Four-option quiz
-- 1–10 rating with comments
-- Average rating and per-PC enable/disable controls
+Subsequent discussions covered multiple question types, four-option quizzes, 1–10 ratings with comments, revoting, teacher-side student controls, and interface troubleshooting. A reliable complete V4 archive was not recovered, so these features are not assigned to a specific release tag here.
 
-The original V4 ZIP was not available in the current upload, so this repository does not fabricate a V4 source archive.
+## V5.1 — supplied package
+**Status: original V5.1 ZIP inspected; source files not yet committed in this repository.**
 
-## V5 and V5.1 — late October 2026
-**Status: V5.1 source package available; V5 intermediate source package not recovered.**
+The supplied archive contains `teacher_server.py`, `student_client.py`, `config.json`, and `README.txt`. Its README describes LAN discovery and fallback, reconnection, multilingual UI, voting and rating modes, teacher controls, and a timed exam mode.
 
-The V5/V5.1 development added a timed exam workflow and further interface/network refinements. The current V5.1 package contains:
-- `teacher_server.py`
-- `student_client.py`
-- `config.json`
-- `README.txt`
+The archive's configuration contains a classroom-specific teacher IP; that value should be replaced with a neutral blank/default before publishing the configuration publicly.
 
-The V5.1 archive is preserved under `releases/V5.1/`. The configured teacher IP has been cleared from the archived copy so a classroom-specific private LAN address is not accidentally treated as a universal default.
-
-## How to read this history
-- A milestone entry is not proof that its original source files are present.
-- Only an explicitly labelled source snapshot should be treated as a recoverable historical code version.
-- Future releases should be added as separate versioned folders and Git tags, with a short changelog and test notes.
+## Repository policy for future releases
+- Keep each complete release in its own folder, e.g. `releases/V5.1/`.
+- Add a Git tag for every verified source release.
+- Include a changelog and test notes with each release.
+- Do not label a reconstructed or partial snapshot as an original release.
